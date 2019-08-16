@@ -1,0 +1,32 @@
+{
+  "name": "wings",
+  "version": "1.0.0",
+  "description": "Boilerplate basado en Next.js + Nugget-UI para la maquetación ultra-rápida de proyectos web altamente optimizados",
+  "main": "index.js",
+  "dependencies": {
+    "@material-ui/core": "4.3.2",
+    "@material-ui/icons": "4.2.1",
+    "@material-ui/styles": "4.3.0",
+    "clsx": "1.0.4",
+    "next": "9.0.3",
+    "prop-types": "15.7.2",
+    "react": "16.9.0",
+    "react-dom": "16.9.0"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boneless-chicken/Wings.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/boneless-chicken/Wings/issues"
+  },
+  "homepage": "https://github.com/boneless-chicken/Wings#readme"
+}
