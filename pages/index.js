@@ -5,7 +5,7 @@ import Box from '@material-ui/core/Box';
 import MuiLink from '@material-ui/core/Link';
 import ProTip from '../src/ProTip';
 import Link from '../src/Link';
-// import {FakeMenu} from "nugget";
+import {FakeMenu} from "nugget";
 
 function Copyright() {
   return (
@@ -19,7 +19,7 @@ function Copyright() {
       <MuiLink color="inherit" href="https://material-ui.com/">
         Material-UI.
       </MuiLink>
-      {/* <FakeMenu /> */}
+      <FakeMenu />
     </Typography>
   );
 }
