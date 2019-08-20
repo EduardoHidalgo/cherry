@@ -6,7 +6,7 @@
   "dependencies": {
     "@material-ui/core": "4.3.2",
     "@material-ui/icons": "4.2.1",
-    "@material-ui/styles": "4.3.0",
+    "@next/bundle-analyzer": "^9.0.4",
     "clsx": "1.0.4",
     "next": "9.0.3",
     "prop-types": "15.7.2",
@@ -16,7 +16,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "analyze": "SET ANALYZE=true&& npm run build"
   },
   "repository": {
     "type": "git",
