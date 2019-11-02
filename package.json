@@ -15,20 +15,23 @@
   "license": "ISC",
   "main": "index.js",
   "dependencies": {
-    "@material-ui/core": "4.4.1",
-    "@material-ui/icons": "4.4.1",
-    "@material-ui/styles": "4.4.1",
+    "@material-ui/core": "4.5.2",
+    "@material-ui/icons": "4.5.1",
+    "@material-ui/lab": "^4.0.0-alpha.30",
+    "@material-ui/styles": "4.5.2",
     "clsx": "1.0.4",
-    "next": "9.0.5",
-    "nugget-ui": "0.2.1",
+    "isomorphic-unfetch": "^3.0.0",
+    "next": "9.1.2",
+    "nugget-ui": "file:../nugget-ui/nugget.tgz",
     "prop-types": "15.7.2",
-    "react": "16.9.0",
-    "react-dom": "16.9.0"
+    "react": "16.11.0",
+    "react-dom": "16.11.0"
   },
   "scripts": {
-    "dev": "npm run build && next",
-    "dev:nugget-dist": "nodemon --watch .\\node_modules\\nugget-ui\\dist --exec npm run dev",
+    "dev": "next",
     "dev:nugget-pkg": "npm install ../nugget-ui/nugget.tgz && npm run dev",
+    "export-src": "xcopy src ..\\nugget-ui\\src /Y /F /S /E /I",
+    "import-src": "xcopy ..\\nugget-ui\\src src /Y /F /S /E /I",
     "build": "next build",
     "start": "next start"
   }
