@@ -1,40 +1,30 @@
 import React from "react";
-import Container from "@material-ui/core/Container";
-import Typography from "@material-ui/core/Typography";
-import Box from "@material-ui/core/Box";
-import MuiLink from "@material-ui/core/Link";
-import ProTip from "../src/ProTip";
-import Link from "../src/Link";
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {"Copyright © "}
-      <MuiLink color="inherit" href="https://material-ui.com/">
-        Your Website
-      </MuiLink>{" "}
-      {new Date().getFullYear()}
-      {". Built with "}
-      <MuiLink color="inherit" href="https://material-ui.com/">
-        Material-UI.
-      </MuiLink>
-    </Typography>
-  );
-}
+import {
+  Dashboard,
+  Module,
+  DummySmall,
+  DummyMedium,
+  DummyLarge
+} from "nugget-ui";
+// import Module from "../src/low/Module/module";
+// import Dashboard from "../src/base/DashboardBase";
+// import DummyMedium from "../src/dummy/DummyMedium";
+// import DummySmall from "../src/dummy/DummySmall";
+// import DummyLarge from "../src/dummy/DummyLarge";
+import AddIcon from "@material-ui/icons/Add";
 
 export default function Index() {
   return (
-    <Container maxWidth="sm">
-      <Box my={4}>
-        <Typography variant="h4" component="h1" gutterBottom>
-          Next.js example
-        </Typography>
-        <Link href="/about" color="secondary">
-          Go to the about page
-        </Link>
-        <ProTip />
-        <Copyright />
-      </Box>
-    </Container>
+    <Dashboard type={"permanent"} title={"Permanent Dashboard"}>
+      <Module key={"DummySmall"} title={"Module 1"} icon={<AddIcon />}>
+        <DummySmall />
+      </Module>
+      <Module key={"DummyMedium"} title={"Module 2"} icon={<AddIcon />}>
+        <DummyMedium />
+      </Module>
+      <Module key={"DummyLarge"} title={"Module 3"} icon={<AddIcon />}>
+        <DummyLarge />
+      </Module>
+    </Dashboard>
   );
 }
