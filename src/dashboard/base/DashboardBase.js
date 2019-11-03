@@ -179,6 +179,10 @@ export default function DashboardBase(props) {
 }
 
 DashboardBase.propTypes = {
+  theme: PropTypes.shape({
+    appBar: PropTypes.object,
+    appBarTitle: PropTypes.object
+  }),
   type: PropTypes.oneOf(["permanent", "persistent", "temporary", "mobile"]),
   enableElevation: PropTypes.bool,
   enableHide: PropTypes.bool,
