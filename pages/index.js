@@ -1,21 +1,30 @@
 import React from "react";
-import {
-  Dashboard,
-  Module,
-  DummySmall,
-  DummyMedium,
-  DummyLarge
-} from "nugget-ui";
-// import Module from "../src/low/Module/module";
-// import Dashboard from "../src/base/DashboardBase";
-// import DummyMedium from "../src/dummy/DummyMedium";
-// import DummySmall from "../src/dummy/DummySmall";
-// import DummyLarge from "../src/dummy/DummyLarge";
+// import {
+//   Dashboard,
+//   Module,
+//   DummySmall,
+//   DummyMedium,
+//   DummyLarge
+// } from "nugget-ui";
+import Module from "../src/dashboard/low/module/Module";
+import Dashboard from "../src/dashboard/base/DashboardBase";
+import DummyMedium from "../src/utils/dummy/DummyMedium";
+import DummySmall from "../src/utils/dummy/DummySmall";
+import DummyLarge from "../src/utils/dummy/DummyLarge";
 import AddIcon from "@material-ui/icons/Add";
+
+const theme = {
+  appBar: {
+    backgroundColor: "black"
+  },
+  appBarTitle: {
+    color: "white"
+  }
+};
 
 export default function Index() {
   return (
-    <Dashboard type={"permanent"} title={"Permanent Dashboard"}>
+    <Dashboard theme={theme} type={"temporary"} title={"Permanent Dashboard"}>
       <Module key={"DummySmall"} title={"Module 1"} icon={<AddIcon />}>
         <DummySmall />
       </Module>
