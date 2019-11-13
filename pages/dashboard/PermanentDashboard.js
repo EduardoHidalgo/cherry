@@ -1,11 +1,11 @@
 import React from "react";
-// import { Dashboard, Module, DummySmall, DummyLarge } from "nugget-ui";
-import AddIcon from "@material-ui/icons/Add";
-import Module from "../../src/dashboard/low/module/Module";
-import Dashboard from "../../src/dashboard/base/DashboardBase";
-import DummyMedium from "../../src/utils/dummy/DummyMedium";
-import DummySmall from "../../src/utils/dummy/DummySmall";
-import DummyLarge from "../../src/utils/dummy/DummyLarge";
+import {
+  Dashboard,
+  Module,
+  DummySmall,
+  DummyMedium,
+  DummyLarge
+} from "nugget-ui";
 
 const theme = {
   appBar: {
