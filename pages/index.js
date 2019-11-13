@@ -1,39 +1,69 @@
-import React from "react";
-// import {
-//   Dashboard,
-//   Module,
-//   DummySmall,
-//   DummyMedium,
-//   DummyLarge
-// } from "nugget-ui";
-import Module from "../src/dashboard/low/module/Module";
-import Dashboard from "../src/dashboard/base/DashboardBase";
-import DummyMedium from "../src/utils/dummy/DummyMedium";
-import DummySmall from "../src/utils/dummy/DummySmall";
-import DummyLarge from "../src/utils/dummy/DummyLarge";
-import AddIcon from "@material-ui/icons/Add";
+import React, { Fragment } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
 
-const theme = {
-  appBar: {
-    backgroundColor: "black"
+const useStyles = makeStyles(theme => ({
+  button: {
+    margin: theme.spacing(1)
   },
-  appBarTitle: {
-    color: "white"
+  input: {
+    display: "none"
   }
-};
+}));
 
 export default function Index() {
+  const classes = useStyles();
+
   return (
-    <Dashboard theme={theme} type={"temporary"} title={"Permanent Dashboard"}>
-      <Module key={"DummySmall"} title={"Module 1"} icon={<AddIcon />}>
-        <DummySmall />
-      </Module>
-      <Module key={"DummyMedium"} title={"Module 2"} icon={<AddIcon />}>
-        <DummyMedium />
-      </Module>
-      <Module key={"DummyLarge"} title={"Module 3"} icon={<AddIcon />}>
-        <DummyLarge />
-      </Module>
-    </Dashboard>
+    <Fragment>
+      <Button
+        variant="contained"
+        href="dashboard/MobileDashboard"
+        className={classes.button}
+        color="primary"
+      >
+        Mobile Dashboard
+      </Button>
+      <Button
+        variant="contained"
+        href="dashboard/PermanentDashboard"
+        className={classes.button}
+        color="primary"
+      >
+        Permanent Dashboard
+      </Button>
+      <Button
+        variant="contained"
+        href="dashboard/PersistentDashboard"
+        className={classes.button}
+        color="primary"
+      >
+        Persistent Dashboard
+      </Button>
+      <Button
+        variant="contained"
+        href="dashboard/TemporaryDashboard"
+        className={classes.button}
+        color="primary"
+      >
+        Temporary Dashboard
+      </Button>
+      <Button
+        variant="contained"
+        href="dashboard/ElevationFeature"
+        className={classes.button}
+        color="primary"
+      >
+        Elevation Feature
+      </Button>
+      <Button
+        variant="contained"
+        href="dashboard/HideFeature"
+        className={classes.button}
+        color="primary"
+      >
+        Hide Feature
+      </Button>
+    </Fragment>
   );
 }
