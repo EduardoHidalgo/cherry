@@ -6,6 +6,7 @@ import {
   DummyMedium,
   DummyLarge
 } from "nugget-ui";
+import AddIcon from "@material-ui/icons/Add";
 
 const theme = {
   appBar: {
