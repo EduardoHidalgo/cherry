@@ -20,13 +20,13 @@ const theme = {
 export default function Index() {
   return (
     <Dashboard theme={theme} type={"persistent"} title={"Persistent Dashboard"}>
-      <Module key={"DummySmall"} title={"Module 1"} icon={<AddIcon />}>
+      <Module index={"DummySmall"} title={"Module 1"} icon={<AddIcon />}>
         <DummySmall />
       </Module>
-      <Module key={"DummyMedium"} title={"Module 2"} icon={<AddIcon />}>
+      <Module index={"DummyMedium"} title={"Module 2"} icon={<AddIcon />}>
         <DummyMedium />
       </Module>
-      <Module key={"DummyLarge"} title={"Module 3"} icon={<AddIcon />}>
+      <Module index={"DummyLarge"} title={"Module 3"} icon={<AddIcon />}>
         <DummyLarge />
       </Module>
     </Dashboard>
