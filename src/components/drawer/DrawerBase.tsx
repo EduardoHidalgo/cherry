@@ -20,9 +20,6 @@ const useStyles = makeStyles<DrawerBaseProps>(() => ({
   },
   paperAnchorDockedLeft: {
     borderRight: "none !important"
-  },
-  asd: {
-    width: "auto"
   }
 }));
 
@@ -49,17 +46,6 @@ const useDefaultStyles = makeStyles<DrawerBaseProps>(() => ({
  * @returns JSX.Element
  */
 export default function DrawerBase(props: DrawerBaseProps) {
-  /* En caso de que no se entregue un tipo de drawer, se propone un
-  conjunto de estilos default dado la obligatoriedad del drawerWidth. */
-  const classes =
-    props.type == null ? useDefaultStyles(props) : useStyles(props);
-
-  const [type, setType] = useState(props.type);
-  const [anchor, setAnchor] = useState(props.anchor);
-  const [elevation, setElevation] = useState(props.elevation);
-  /* Booleano interno, filtra los estilos del drawer dependiendo del anchor */
-  const [horizontalDrawer, setHorizontalDrawer] = useState(false);
-
   const {
     disableToolbar,
     indexes,
@@ -71,6 +57,21 @@ export default function DrawerBase(props: DrawerBaseProps) {
     handleCloseDrawer,
     children
   } = props;
+
+  /* En caso de que no se entregue un tipo de drawer, se propone un
+  conjunto de estilos default dado la obligatoriedad del drawerWidth. */
+  const classes =
+    props.type == null ? useDefaultStyles(props) : useStyles(props);
+
+  const [type, setType] = useState(props.type);
+  const [anchor, setAnchor] = useState(props.anchor);
+  const [elevation, setElevation] = useState(
+    props.elevation != undefined ? props.elevation : 8
+  );
+  /* Booleano interno, filtra los estilos del drawer dependiendo del anchor */
+  const [horizontalDrawer, setHorizontalDrawer] = useState(
+    disableToolbar != undefined ? disableToolbar : false
+  );
 
   /* Calcula el boolean "horizontalDrawer" cada que cambie el anchor. Es un
   Effect debido a que el anchor "podría" cambiar en tiempo de render, es por
