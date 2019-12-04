@@ -20,7 +20,17 @@ const theme = {
 
 export default function Index() {
   return (
-    <Dashboard theme={theme} type={"temporary"} title={"Temporary Dashboard"}>
+    <Dashboard
+      /* Ejemplo del uso de los drawerProps */
+      drawerProps={{
+        anchor: "top",
+        elevation: 16,
+        transitionDuration: 300
+      }}
+      theme={theme}
+      type={"temporary"}
+      title={"Temporary Dashboard"}
+    >
       <Module index={"DummySmall"} title={"Module 1"} icon={<AddIcon />}>
         <DummySmall />
       </Module>
