@@ -1,11 +1,6 @@
 import React from "react";
-import {
-  Dashboard,
-  Module,
-  DummySmall,
-  DummyMedium,
-  DummyLarge
-} from "nugget-ui";
+import { Module, DummySmall, DummyMedium, DummyLarge } from "../../src/index";
+import { Dashboard } from "../../src/index";
 import AddIcon from "@material-ui/icons/Add";
 
 const theme = {
@@ -19,7 +14,12 @@ const theme = {
 
 export default function Index() {
   return (
-    <Dashboard theme={theme} type={"persistent"} title={"Persistent Dashboard"}>
+    <Dashboard
+      drawerProps={{ anchor: "right" }}
+      theme={theme}
+      type={"persistent"}
+      title={"Persistent Dashboard"}
+    >
       <Module index={"DummySmall"} title={"Module 1"} icon={<AddIcon />}>
         <DummySmall />
       </Module>

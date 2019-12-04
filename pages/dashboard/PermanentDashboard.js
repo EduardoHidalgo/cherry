@@ -20,7 +20,12 @@ const theme = {
 
 export default function Index() {
   return (
-    <Dashboard theme={theme} type={"permanent"} title={"Permanent Dashboard"}>
+    <Dashboard
+      drawerProps={{ anchor: "right" }}
+      theme={theme}
+      type={"permanent"}
+      title={"Permanent Dashboard"}
+    >
       <Module index={"DummySmall"} title={"Module 1"} icon={<AddIcon />}>
         <DummySmall />
       </Module>
