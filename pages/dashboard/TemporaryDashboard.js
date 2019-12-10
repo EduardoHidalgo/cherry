@@ -1,12 +1,12 @@
 import React from "react";
 import {
-  // Dashboard,
+  Dashboard,
   Module,
   DummySmall,
   DummyMedium,
   DummyLarge
 } from "nugget-ui";
-import { Dashboard } from "../../src/index";
+// import { Dashboard } from "../../src/index";
 import AddIcon from "@material-ui/icons/Add";
 
 const theme = {
@@ -23,7 +23,7 @@ export default function Index() {
     <Dashboard
       /* Ejemplo del uso de los drawerProps */
       drawerProps={{
-        anchor: "top",
+        anchor: "left",
         elevation: 16,
         transitionDuration: 300
       }}
