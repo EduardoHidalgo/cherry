@@ -7,7 +7,7 @@ export interface ExpansionPanelContentProps extends Children {
   index: string;
 
   /** Titulo del panel expansivo. */
-  title?: string;
+  title: string;
 
   /** si es true, renderea un divider entre el PanelSummary y el PanelDetails. */
   divider?: boolean;
