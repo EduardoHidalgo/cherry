@@ -8,7 +8,6 @@ import {
 } from "nugget-ui";
 // import { Dashboard } from "../../src/index";
 import AddIcon from "@material-ui/icons/Add";
-import ButtonShowcase from "../../components/ButtonShowcase";
 
 const theme = {
   appBar: {
@@ -31,9 +30,7 @@ export default function Index() {
         index={"DummyComponents"}
         title={"Expansion Panel"}
         icon={<AddIcon />}
-      >
-        <ButtonShowcase />
-      </Module>
+      ></Module>
       <Module index={"DummySmall"} title={"Module 1"} icon={<AddIcon />}>
         <DummySmall />
       </Module>

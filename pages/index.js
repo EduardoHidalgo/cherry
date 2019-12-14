@@ -1,69 +1,92 @@
-import React, { Fragment } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
+import React, { useState, useEffect } from "react";
+import { Dashboard, Module } from "nugget-ui";
+import DashboardShowcase from "../components/DashboardShowcase";
+import FormsShowcase from "../components/FormsShowcase";
 
-const useStyles = makeStyles(theme => ({
-  button: {
-    margin: theme.spacing(1)
+/* Icons */
+import DashboardIcon from "@material-ui/icons/Dashboard";
+import CheckBox from "@material-ui/icons/CheckBox";
+
+const theme = {
+  appBar: {
+    backgroundColor: "black"
   },
-  input: {
-    display: "none"
+  appBarTitle: {
+    color: "white"
   }
-}));
+};
 
 export default function Index() {
-  const classes = useStyles();
+  const [dashboardType, setDashboardType] = useState("temporary");
 
-  return (
-    <Fragment>
-      <Button
-        variant="contained"
-        href="dashboard/MobileDashboard"
-        className={classes.button}
-        color="primary"
-      >
-        Mobile Dashboard
-      </Button>
-      <Button
-        variant="contained"
-        href="dashboard/PermanentDashboard"
-        className={classes.button}
-        color="primary"
-      >
-        Permanent Dashboard
-      </Button>
-      <Button
-        variant="contained"
-        href="dashboard/PersistentDashboard"
-        className={classes.button}
-        color="primary"
-      >
-        Persistent Dashboard
-      </Button>
-      <Button
-        variant="contained"
-        href="dashboard/TemporaryDashboard"
-        className={classes.button}
-        color="primary"
-      >
-        Temporary Dashboard
-      </Button>
-      <Button
-        variant="contained"
-        href="dashboard/ElevationFeature"
-        className={classes.button}
-        color="primary"
-      >
-        Elevation Feature
-      </Button>
-      <Button
-        variant="contained"
-        href="dashboard/HideFeature"
-        className={classes.button}
-        color="primary"
-      >
-        Hide Feature
-      </Button>
-    </Fragment>
-  );
+  const changeDashboard = type => {
+    setDashboardType(type);
+  };
+
+  useEffect(() => {
+    console.log(dashboardType);
+  }, [dashboardType]);
+
+  const modules = [
+    <Module
+      key={"dashboards"}
+      index={"dashboards"}
+      title={"Dashboards"}
+      icon={<DashboardIcon />}
+    >
+      <DashboardShowcase changeDashboard={changeDashboard} />
+    </Module>,
+    <Module
+      key={"formControls"}
+      index={"formControls"}
+      title={"Form Controls"}
+      icon={<CheckBox />}
+    >
+      <FormsShowcase />
+    </Module>
+  ];
+
+  const DashboardRender = () => {
+    switch (dashboardType) {
+      case "permanent":
+        return (
+          <Dashboard
+            title={"Nugget-UI Library"}
+            type={"permanent"}
+            theme={theme}
+            drawerProps={{ anchor: "left" }}
+          >
+            {modules.map(m => m)}
+          </Dashboard>
+        );
+      case "persistent":
+        return (
+          <Dashboard
+            title={"Nugget-UI Library"}
+            type={"persistent"}
+            theme={theme}
+            drawerProps={{ anchor: "left" }}
+          >
+            {modules.map(m => m)}
+          </Dashboard>
+        );
+      case "temporary":
+        return (
+          <Dashboard
+            title={"Nugget-UI Library"}
+            type={"temporary"}
+            theme={theme}
+            drawerProps={{
+              anchor: "left",
+              elevation: 16,
+              transitionDuration: 300
+            }}
+          >
+            {modules.map(m => m)}
+          </Dashboard>
+        );
+    }
+  };
+
+  return DashboardRender();
 }
