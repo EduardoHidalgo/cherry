@@ -2,8 +2,6 @@ import { Fragment } from "react";
 import { Button } from "nugget-ui";
 
 export default function DashboardShowcase(props) {
-  console.log(props);
-
   const changeDashboard = type => {
     props.changeDashboard(type);
   };
@@ -17,6 +15,10 @@ export default function DashboardShowcase(props) {
       <Button
         label={"Persistent Dashboard"}
         onClick={() => changeDashboard("persistent")}
+      />
+      <Button
+        label={"Temporary Dashboard"}
+        onClick={() => changeDashboard("temporary")}
       />
     </Fragment>
   );
