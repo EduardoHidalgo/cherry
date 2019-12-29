@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, Fragment } from "react";
 import { Dashboard, Module } from "nugget-ui";
 import DashboardShowcase from "../components/DashboardShowcase";
 import FormsShowcase from "../components/FormsShowcase";
@@ -6,8 +6,6 @@ import FormsShowcase from "../components/FormsShowcase";
 /* Icons */
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import CheckBox from "@material-ui/icons/CheckBox";
-import Notes from "../components/Notes";
-import DummyFetch from "../components/DummyFetch";
 
 const theme = {
   appBar: {
